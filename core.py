@@ -2,6 +2,7 @@ import requests
 import tkinter as tk
 from tkinter import scrolledtext
 import json
+from config import TIMEOUT, PROXY
 
 def tkinter_window(data_dict):
     window = tk.Tk()
@@ -29,6 +30,7 @@ class MyStat:
             return False,None
         
     def get_marks(self):
+        time.sleep(TIMEOUT)
         result = self.get_auth()
         if(result[0] == False):
             return False
